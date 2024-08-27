@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasion Indumentaria</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+        }
+
+        .header-logo img {
+            max-width: 350px;
+            height: auto;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .button {
+            display: inline-block;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 1em auto;
+            padding: 0;
+            font-size: 1.2em;
+            text-align: center;
+            width: 300px;
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+            line-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-2px);
+        }
+
+        .button span {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 15px 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-size: 1.2em;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .section {
+            display: none;
+            padding: 2em 0;
+            position: relative;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .contact-button {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            margin: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .product p {
+            font-size: 1em;
+            margin: 0.5em 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+            width: auto;
+            min-width: 100px;
+            margin: 0.5em auto;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="https://i.imgur.com/O6LcKqB.png" alt="Logo Fasion Indumentaria">
+        </div>
+    </header>
+
+    <section id="home" class="section active">
+        <div class="container">
+            <a href="#" class="button" style="background-image: url('https://i.imgur.com/3lE71Xr.png');" onclick="showSection('men')">
+                <span>Ropa de Hombre</span>
+            </a>
+            <a href="#" class="button" style="background-image: url('https://i.imgur.com/ACqACRr.jpeg');" onclick="showSection('women')">
+                <span>Ropa de Mujer</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="men" class="section">
+        <button class="back-button" onclick="showSection('home')">Volver</button>
+        <div class="container">
+            <h2>Ropa de Hombre</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="https://i.imgur.com/xWxbN2R.jpeg" alt="Short Deportivo de Hombre">
+                    <h3>Short Deportivo de Hombre</h3>
+                    <p>$10.00</p>
+                    <a href="https://wa.me/message/DDPT2TGEWI2AA1" class="buy-button" target="_blank">Comprar</a>
+                </div>
+                <!-- Agrega más productos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <section id="women" class="section">
+        <button class="back-button" onclick="showSection('home')">Volver</button>
+        <div class="container">
+            <h2>Ropa de Mujer</h2>
+            <div class="product-list">
+                <!-- Agrega productos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="https://wa.me/message/DDPT2TGEWI2AA1" class="contact-button" target="_blank">Contactarme por WhatsApp</a>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body></html>
